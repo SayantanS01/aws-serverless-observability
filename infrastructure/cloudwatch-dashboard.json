@@ -1,0 +1,276 @@
+{
+  "start": "-PT3H",
+  "periodOverride": "inherit",
+  "widgets": [
+    {
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 24,
+      "height": 2,
+      "properties": {
+        "markdown": "# Serverless E-Commerce Observability\nEnvironment: dev | Region: ap-south-1\nAPI Gateway \u2192 Lambda \u2192 DynamoDB"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 2,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "API Gateway \u2014 Requests and Errors",
+        "view": "timeSeries",
+        "region": "ap-south-1",
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          [
+            "AWS/ApiGateway",
+            "Count",
+            "ApiId",
+            "uxy4i3o45h",
+            "Stage",
+            "$default",
+            {
+              "label": "Requests",
+              "stat": "Sum",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/ApiGateway",
+            "4xx",
+            "ApiId",
+            "uxy4i3o45h",
+            "Stage",
+            "$default",
+            {
+              "label": "4xx errors",
+              "stat": "Sum",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/ApiGateway",
+            "5xx",
+            "ApiId",
+            "uxy4i3o45h",
+            "Stage",
+            "$default",
+            {
+              "label": "5xx errors",
+              "stat": "Sum",
+              "period": 300
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 2,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "API Gateway \u2014 Latency",
+        "view": "timeSeries",
+        "region": "ap-south-1",
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          [
+            "AWS/ApiGateway",
+            "Latency",
+            "ApiId",
+            "uxy4i3o45h",
+            "Stage",
+            "$default",
+            {
+              "label": "API latency",
+              "stat": "Average",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/ApiGateway",
+            "IntegrationLatency",
+            "ApiId",
+            "uxy4i3o45h",
+            "Stage",
+            "$default",
+            {
+              "label": "Integration latency",
+              "stat": "Average",
+              "period": 300
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 8,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "Lambda \u2014 Invocations and Errors",
+        "view": "timeSeries",
+        "region": "ap-south-1",
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          [
+            "AWS/Lambda",
+            "Invocations",
+            "FunctionName",
+            "ecommerce-observability-dev-checkout",
+            {
+              "label": "Invocations",
+              "stat": "Sum",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/Lambda",
+            "Errors",
+            "FunctionName",
+            "ecommerce-observability-dev-checkout",
+            {
+              "label": "Errors",
+              "stat": "Sum",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/Lambda",
+            "Throttles",
+            "FunctionName",
+            "ecommerce-observability-dev-checkout",
+            {
+              "label": "Throttles",
+              "stat": "Sum",
+              "period": 300
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 8,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "Lambda \u2014 Execution Duration",
+        "view": "timeSeries",
+        "region": "ap-south-1",
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          [
+            "AWS/Lambda",
+            "Duration",
+            "FunctionName",
+            "ecommerce-observability-dev-checkout",
+            {
+              "label": "Average duration",
+              "stat": "Average",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/Lambda",
+            "Duration",
+            "FunctionName",
+            "ecommerce-observability-dev-checkout",
+            {
+              "label": "Maximum duration",
+              "stat": "Maximum",
+              "period": 300
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 14,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "DynamoDB \u2014 Throttling",
+        "view": "timeSeries",
+        "region": "ap-south-1",
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          [
+            "AWS/DynamoDB",
+            "ReadThrottleEvents",
+            "TableName",
+            "ecommerce-observability-dev-orders",
+            {
+              "label": "Read throttles",
+              "stat": "Sum",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/DynamoDB",
+            "WriteThrottleEvents",
+            "TableName",
+            "ecommerce-observability-dev-orders",
+            {
+              "label": "Write throttles",
+              "stat": "Sum",
+              "period": 300
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 14,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "DynamoDB \u2014 Consumed Capacity",
+        "view": "timeSeries",
+        "region": "ap-south-1",
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          [
+            "AWS/DynamoDB",
+            "ConsumedReadCapacityUnits",
+            "TableName",
+            "ecommerce-observability-dev-orders",
+            {
+              "label": "Read capacity",
+              "stat": "Sum",
+              "period": 300
+            }
+          ],
+          [
+            "AWS/DynamoDB",
+            "ConsumedWriteCapacityUnits",
+            "TableName",
+            "ecommerce-observability-dev-orders",
+            {
+              "label": "Write capacity",
+              "stat": "Sum",
+              "period": 300
+            }
+          ]
+        ]
+      }
+    }
+  ]
+}

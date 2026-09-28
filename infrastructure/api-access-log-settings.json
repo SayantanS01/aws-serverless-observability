@@ -1,0 +1,4 @@
+{
+  "DestinationArn": "arn:aws:logs:ap-south-1:394877251696:log-group:/aws/apigateway/ecommerce-observability-dev-http-api-access",
+  "Format": "{\"requestId\":\"$context.requestId\",\"sourceIp\":\"$context.identity.sourceIp\",\"requestTime\":\"$context.requestTime\",\"httpMethod\":\"$context.httpMethod\",\"routeKey\":\"$context.routeKey\",\"status\":\"$context.status\",\"responseLatency\":\"$context.responseLatency\",\"integrationError\":\"$context.integrationErrorMessage\",\"userAgent\":\"$context.identity.userAgent\"}"
+}
